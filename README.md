@@ -19,3 +19,6 @@ pip install --upgrade pip setuptools wheel
 
 <h1>Email Slicer</h1>
 Retrieve the username and domain name of an email address
+
+<h1>Story Generator</h1>
+Generate a random story every time the user runs the program
