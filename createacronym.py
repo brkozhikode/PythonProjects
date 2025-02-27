@@ -1,5 +1,5 @@
 user_input = str(input("Enter a Phrase: "))
-# split the phrase and crete an array of words
+# The split() method splits a string into a list
 text = user_input.split()
 print(text)
 a = " "
