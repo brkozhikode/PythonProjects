@@ -1,29 +1,27 @@
 from datetime import datetime
 from playsound import playsound
-alarm_time = input("Enter the time of alarm to be set:HH:MM:SS AM/PM\n")
+alarm_time = input("Enter the time of alarm to be set in 24 hour format:HH:MM:SS\n")
 alarm_hour=alarm_time[0:2]
 alarm_minute=alarm_time[3:5]
 alarm_seconds=alarm_time[6:8]
-alarm_period = alarm_time[9:11].upper()
-if alarm_period == "":
-    print ("invalid input")
 
-print("Setting up alarm.." + alarm_period)
+if int(alarm_hour) < 0 or int(alarm_hour) > 24 or int(alarm_minute) < 0 or int(alarm_minute) > 59 or int(alarm_seconds) < 0 or int(alarm_seconds) > 59:
+    print("invalid input")
+    exit()
+
+print("Setting up alarm for.." + alarm_time)
 while True:
     now = datetime.now()
     #print(now)
-    current_hour = now.strftime("%I")
+    current_hour = now.strftime("%H")
     current_minute = now.strftime("%M")
     current_seconds = now.strftime("%S")
-    current_period = now.strftime("%p")
-    print(current_seconds + " "+ alarm_seconds )
-    if(alarm_period==current_period):
-        #print(current_period)
-        if(alarm_hour==current_hour):
-            #print(alarm_hour)
-            if(alarm_minute==current_minute):
-                #print(alarm_minute)
-                if(alarm_seconds==current_seconds):
-                    print("Wake Up!")
-                    playsound('resources/alarm.mp3')
-                    break
+    #print(alarm_hour+current_hour)
+    if(alarm_hour==current_hour):
+        #print(alarm_minute)
+        if(alarm_minute==current_minute):
+            #print(alarm_seconds)
+            if(alarm_seconds==current_seconds):
+                print("Wake Up!")
+                playsound('resources/alarm.mp3')
+                break
