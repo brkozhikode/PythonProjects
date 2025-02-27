@@ -17,3 +17,5 @@ pip3 install PyObjC
 
 pip install --upgrade pip setuptools wheel
 
+<h1>Email Slicer</h1>
+Retrieve the username and domain name of an email address
